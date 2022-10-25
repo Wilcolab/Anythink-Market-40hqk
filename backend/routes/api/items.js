@@ -144,6 +144,10 @@ router.post("/", auth.required, function(req, res, next) {
         return res.sendStatus(401);
       }
 
+      if (!req.body.image) {
+        return res.status(400).json({errors: { image: "Image url required"}});
+      }
+
       var item = new Item(req.body.item);
 
       item.seller = user;
