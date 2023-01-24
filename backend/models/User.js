@@ -29,7 +29,7 @@ var UserSchema = new mongoose.Schema(
       enum: ["user", "admin"],
       default: "user"
     },
-    isVerified: { type: Boolean, default: true },
+    isVerified: { type: Boolean, default: false },
     favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: "Item" }],
     following: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
     hash: String,
